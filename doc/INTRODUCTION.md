@@ -30,4 +30,4 @@ hithesis 已收录在[CTAN](https://ctan.org/pkg/hithesis)中，用户安装TeXL
 ## 本项目是什么
 
 本项目为基于 [dustincys](https://github.com/dustincys) 开发的 [hithesis](https://github.com/dustincys/hithesis) 的改进版。
-原始项目未包含毕业设计（论文）的开题报告、中期报告等，本项目对此进行了支持，并且修复了原始项目的一些小错误。
+原始项目未包含[本科生毕业设计（论文）的开题报告、中期报告](FEATURES.md)等，本项目对此进行了支持，并且[修复了原始项目的一些小错误](CHANGELOG.md)。
