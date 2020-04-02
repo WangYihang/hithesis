@@ -10,7 +10,7 @@
     absupper=true,
     fontset=windowsnew,
     type=bachelor,
-    campus=weihai,
+    campus=harbin,
     stage=opening
 ]{hithesis}
 % 此处选项中不要有空格
@@ -23,7 +23,7 @@
 % campus=shenzhen|weihai|harbin
 %   含义：校区选项，默认harbin
 % stage=opening|interim|final
-%   含义：毕业设计的阶段
+%   含义：毕业设计的阶段，在修改为当前阶段后，需要在本文下方的正文区域寻找对应的 stage 并取消注释
 %       opening 开题
 %       interim 中期
 %       final 结题
@@ -110,11 +110,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 本科生开题答辩
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TBD
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 本科生中期答辩
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
 % 生成封面
 \makecover
@@ -122,17 +117,40 @@
 \tableofcontents
 
 \mainmatter
-% 根据学校教务处中期报告模版将内容分为如下几个章节
-\input{body/interim/1-research-area.tex}
-\input{body/interim/2-research-plan.tex}
-\input{body/interim/3-finished-work.tex}
-\input{body/interim/4-future-work.tex}
-\input{body/interim/5-difficulties.tex}
-\input{body/interim/6-probability-to-finish.tex}
+% 根据学校教务处开题报告模版将内容分为如下几个章节
+\input{body/opening/1-research-origin.tex  }
+\input{body/opening/2-research-background.tex}
+\input{body/opening/3-research-content.tex}
+\input{body/opening/4-research-plan.tex}
+\input{body/opening/5-research-aim.tex}
+\input{body/opening/6-research-requirements.tex}
+\input{body/opening/7-research-difficulties.tex}
 
 \backmatter
 \bibliographystyle{hithesis}
 \bibliography{reference}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % 本科生中期答辩
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \frontmatter
+% % 生成封面
+% \makecover
+% % 生成目录
+% \tableofcontents
+
+% \mainmatter
+% % 根据学校教务处中期报告模版将内容分为如下几个章节
+% \input{body/interim/1-research-area.tex}
+% \input{body/interim/2-research-plan.tex}
+% \input{body/interim/3-finished-work.tex}
+% \input{body/interim/4-future-work.tex}
+% \input{body/interim/5-difficulties.tex}
+% \input{body/interim/6-probability-to-finish.tex}
+
+% \backmatter
+% \bibliographystyle{hithesis}
+% \bibliography{reference}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 本科生毕业设计（论文）
