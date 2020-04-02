@@ -1,5 +1,18 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[newtxmath=true,newgeometry=two,capcenterlast=true,subcapcenterlast=true,openright=false,library=false,absupper=true,fontset=windowsnew,type=master,campus=shenzhen]{hithesis}
+% !Mode:: "TeX:UTF-8"
+\documentclass[
+    newtxmath=true,
+    newgeometry=two,
+    capcenterlast=true,
+    subcapcenterlast=true,
+    openright=false,
+    library=false,
+    absupper=true,
+    fontset=windowsnew,
+    type=bachelor,
+    campus=harbin,
+    progress=interim
+]{hithesis}
 % 此处选项中不要有空格
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 必填选项
@@ -9,6 +22,11 @@
 % 需求）
 % campus=shenzhen|weihai|harbin
 %   含义：校区选项，默认harbin
+% progress=opening|interim|
+%   含义：毕业设计的阶段
+%       opening 开题
+%       interim 中期
+%       final 结题
 % glue=true|false
 %   含义：由于我工规范中要求字体行距在一个闭区间内，这个选项为true表示tex自
 %   动选择，为false表示区间内一个最接近版心要求行数的要求的默认值，缺省值为
@@ -79,59 +97,109 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{hithesis}
+
+% 定义封面信息
+\input{front/cover}
+% 定义所包含图片根目录
 \graphicspath{{figures/}}
+% 物理量名称表，学院有要求添加
+% \input{front/denotation}
+
 
 \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 本科生开题答辩
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TBD
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 本科生中期答辩
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
-\input{front/cover} % 封面
+% 生成封面
 \makecover
-\input{front/denotation}%物理量名称表,符合规范为主，有要求添加
-%\cleardoublepage  自定义在什么位置进行右翻页
-\tableofcontents    % 中文目录
-%\cleardoublepage  自定义在什么位置进行右翻页
-\tableofengcontents % 英文目录,硕本不要求
+% 生成目录
+\tableofcontents
 
 \mainmatter
-%\linenumbers %debug 选项
-%\layout　%debug 选项
-%\floatdiagram %debug 选项
-%\begin{figure} %debug 选项
-%\currentfloat %debug 选项
-%\tryintextsep{\intextsep} %debug 选项
-%\trytopfigrule{0.5pt} %debug 选项
-%\trybotfigrule{1pt} %debug 选项
-%\setlayoutscale{0.9} %debug 选项
-%\floatdesign %debug 选项
-%\caption{Float layout with rules}\label{fig:fludf} %debug 选项
-%\end{figure} %debug 选项
-\include{body/introduction}
+% 根据学校教务处中期报告模版将内容分为如下几个章节
+\input{body/interim/1-research-area.tex}
+\input{body/interim/2-research-plan.tex}
+\input{body/interim/3-finished-work.tex}
+\input{body/interim/4-future-work.tex}
+\input{body/interim/5-difficulties.tex}
+\input{body/interim/6-probability-to-finish.tex}
 
 \backmatter
-%硕博书序
-% \include{back/conclusion}   % 结论
-% \bibliographystyle{hithesis} %如果没有参考文献时候
-% \bibliography{reference}
-% \begin{appendix}%附录
-% \input{back/appA.tex}
-% \end{appendix}
-% \include{back/publications}    % 所发文章
-% \include{back/ceindex}    % 索引, 根据自己的情况添加或者不添加，选择自动添加或者手工添加。
-% \authorization %授权
-% %\authorization[saomiao.pdf] %添加扫描页的命令，与上互斥
-% \include{back/acknowledgements} %致谢
-% \include{back/resume}          % 博士学位论文有个人简介
-
-%本科书序为：
-\include{body/conclusion}   % 结论
 \bibliographystyle{hithesis}
 \bibliography{reference}
-\authorization %授权
-% \authorization[saomiao.pdf] %添加扫描页的命令，与上互斥
-\include{body/acknowledgements} %致谢
-\begin{appendix}%附录
-\input{back/appendix01}%本科生翻译论文
-\end{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 本科生毕业设计（论文）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TBD
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 硕士研究生
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TBD
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 博士研究生
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TBD
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \frontmatter
+% \input{front/cover} % 封面
+% \makecover
+% \input{front/denotation}%物理量名称表,符合规范为主，有要求添加
+% %\cleardoublepage  自定义在什么位置进行右翻页
+% \tableofcontents    % 中文目录
+% %\cleardoublepage  自定义在什么位置进行右翻页
+% \tableofengcontents % 英文目录,硕本不要求
+
+% \mainmatter
+% %\linenumbers %debug 选项
+% %\layout　%debug 选项
+% %\floatdiagram %debug 选项
+% %\begin{figure} %debug 选项
+% %\currentfloat %debug 选项
+% %\tryintextsep{\intextsep} %debug 选项
+% %\trytopfigrule{0.5pt} %debug 选项
+% %\trybotfigrule{1pt} %debug 选项
+% %\setlayoutscale{0.9} %debug 选项
+% %\floatdesign %debug 选项
+% %\caption{Float layout with rules}\label{fig:fludf} %debug 选项
+% %\end{figure} %debug 选项
+% \include{body/introduction}
+
+% \backmatter
+% %硕博书序
+% % \include{back/conclusion}   % 结论
+% % \bibliographystyle{hithesis} %如果没有参考文献时候
+% % \bibliography{reference}
+% % \begin{appendix}%附录
+% % \input{back/appA.tex}
+% % \end{appendix}
+% % \include{back/publications}    % 所发文章
+% % \include{back/ceindex}    % 索引, 根据自己的情况添加或者不添加，选择自动添加或者手工添加。
+% % \authorization %授权
+% % %\authorization[saomiao.pdf] %添加扫描页的命令，与上互斥
+% % \include{back/acknowledgements} %致谢
+% % \include{back/resume}          % 博士学位论文有个人简介
+
+% %本科书序为：
+% \include{body/conclusion}   % 结论
+% \bibliographystyle{hithesis}
+% \bibliography{reference}
+% \authorization %授权
+% % \authorization[saomiao.pdf] %添加扫描页的命令，与上互斥
+% \include{body/acknowledgements} %致谢
+% \begin{appendix}%附录
+%     \input{back/appendix01}%本科生翻译论文
+% \end{appendix}
 
 \end{document}
 

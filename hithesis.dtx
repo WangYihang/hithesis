@@ -2256,7 +2256,7 @@ delim_1 "\\hspace*{\\fill}"
 \gdef\hit@cxuewei{学士}
 \fi
 \def\hit@bachelor@cxuewei{本科}
-\def\hit@bachelor@cthesisname{毕业设计（论文）}
+\def\hit@bachelor@cthesisname{毕业设计（论文）中期报告}
 \def\hit@bachelor@caffiltitle{院（系）}
 %</cfg>
 %    \end{macrocode}
@@ -2419,8 +2419,9 @@ delim_1 "\\hspace*{\\fill}"
 % \changes{v2.1.0}{2020/3/7}{此处添加校区选项}
 % 换行且不能影响到原创性声明。此处额外设置了一个变量ctitlecover。}
 %    \begin{macrocode}
+
 \newcommand{\hit@second@titlepage@bachelor}{
-  \vspace*{0.8cm}
+  \vspace*{1.2cm}
   \ifhit@harbin%
   \centering{\includegraphics[width=6.2cm]{hitlogo}}
   \else%
@@ -2434,7 +2435,7 @@ delim_1 "\\hspace*{\\fill}"
   \fi%
   \vspace{1.3cm}
   \begin{center}
-    \centering\includegraphics[width=10.5cm]{bthesistitle}
+    \centering\includegraphics[width=13.5cm]{interim}
     \vfill
     \parbox[t][14.2cm][b]{\textwidth}
     {\heiti\xiaosan
@@ -2452,6 +2453,8 @@ delim_1 "\\hspace*{\\fill}"
 	  {\hit@put@title{\hit@cdatetitle}} & \underline{\makebox[6.1cm]{\hit@cdate}}
 	\end{tabular} \renewcommand{\arraystretch}{1}
       \end{center}
+  \vspace*{1.2cm}
+  \centering\includegraphics[width=8cm]{jwc}
     }
   \end{center}
 }
@@ -2574,8 +2577,8 @@ delim_1 "\\hspace*{\\fill}"
 % \changes{v2.0.10}{2019/6/25}{此处添加提交图书馆电子版的逻辑}
 %    \begin{macrocode}
   \begin{titlepage}
-    \hit@first@titlepage
-    \ifhit@library\clearpage\else\cleardoublepage\fi
+    % \hit@first@titlepage
+    % \ifhit@library\clearpage\else\cleardoublepage\fi
     \hit@second@titlepage
     \ifhit@library\clearpage\else\cleardoublepage\fi
     \ifhit@bachelor
@@ -2588,7 +2591,8 @@ delim_1 "\\hspace*{\\fill}"
     \fi
   \end{titlepage}
   \normalsize
-  \hit@makeabstract}
+  % \hit@makeabstract
+}
 %    \end{macrocode}
 %    生成参考文献和关键字。
 %    \begin{macrocode}
