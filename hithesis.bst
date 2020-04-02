@@ -1464,6 +1464,13 @@ FUNCTION {thesis.impl} {                          % void Entry::thesis_impl() {
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                                   %
+FUNCTION {thesis} {                            % void Entry::thesis() {
+  "D" set.mark                                    %   set_mark("D");
+  thesis.impl                                     %   thesis_impl();
+}                                                 % }
+                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                                  %
 FUNCTION {phdthesis} {                            % void Entry::phdthesis() {
   "D" set.mark                                    %   set_mark("D");
   thesis.impl                                     %   thesis_impl();
