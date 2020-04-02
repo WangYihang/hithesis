@@ -26,10 +26,3 @@ hithesis, 既含我工hit，也是说用的“嗨！”，读作“嗨thesis”�
 另外一点注意：查重的pdf一定要确保能够正常复制汉字。有些系统自动识别的汉字字体，
 会出现无法正常复制的情况（可能是系统的字体映射出现了误差）。一般需要在主文件的
 选项中明确声明使用哪一种fontset。
-
-### 其他相关项目
-
-- [hithesis-alpha](https://github.com/Regulust/hithesis-alpha)
-  - 在hithesis的基础上进行的改编尝试，尝试添加开题/中期报告样式。
-- [hithesis-beta](https://github.com/specialpointcentral/hithesis-beta)
-  - 在hithesis-alpha的基础上进行的改编尝试，修复了一些bug，满足威海校区本科的开题，同时更新到了最新的hithesis。

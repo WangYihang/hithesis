@@ -1,5 +1,7 @@
 # 其他说明
 
+原作者: [dustincys](https://github.com/dustincys)
+
 由于维护者（就是本书呆）已经是高龄不毕业博士，课题繁忙，实在无空余时间再写详细文档以及 无偿解决一些用户要求（例如前面文档中[已经解决的算法格式各实验室要求不一致](https://github.com/dustincys/PlutoThesis#%E6%B2%A1%E6%9C%89%E6%98%8E%E7%A1%AE%E8%A6%81%E6%B1%82%E7%9A%84%E6%A0%BC%E5%BC%8F)问题）。
 
 各位刀客和大侠如用的嗨，要解囊相助，请微信扫码～～
