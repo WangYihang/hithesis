@@ -30,6 +30,27 @@
 1. **忘记**在 word 中的 `如下图`、`如上表` 的说法，而是使用 `\label` 与 `\ref` 的方式来引用表格/图片。
 2. **不去管它们，布局在哪儿就是哪儿，拥抱 LaTeX 的浮动体布局算法。**
 
+### 为什么我编译输出的 PDF 的目录是的空的/不正确？
+
+你可能需要多编译几次。
+
+常见的编译方案如：
+```bash
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+```
+在 hithesis 中，编译方案为：
+```bash
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+splitindex main -- -s hithesis.ist
+xelatex main.tex
+```
+
 ### 如何在论文中插入代码块？
 
 插入代码块一般有两个模块可以使用：lstlisting 与 minted。
