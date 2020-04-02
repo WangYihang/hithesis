@@ -293,13 +293,13 @@
 
 - 视频教程
   - [刘海洋 · LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX 知识](https://www.bilibili.com/video/BV1s7411U7Pr)
-  - [LaTex 工作室](https://space.bilibili.com/209746320)
+  - [LaTeX 工作室](https://space.bilibili.com/209746320)
   
 - 书籍/文字资料
   - [LaTeX 学习资料（分享密码：9mn2）](https://www.lanzous.com/b015bk95c)
     - **复旦大学 - 现代 LaTeX 入门讲座 - 曾祥东.pdf**
     - **漫谈 LaTeX 排版常见概念误区.pdf**
-    - 清华大学未来通信兴趣团队 - 如何使用 LaTex 排版论文.pdf
+    - 清华大学未来通信兴趣团队 - 如何使用 LaTeX 排版论文.pdf
     - 上海交通大学致远学院 LaTeX 资料.zip
     - 武汉大学 - LaTeX 入门教程.zip
     - 西北农林科技大学 - LaTeX 科技排版 - 耿楠.zip
