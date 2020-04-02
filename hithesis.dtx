@@ -951,6 +951,18 @@
   family=hit,
   prefix=hit@,
   setkeys=\kvsetkeys}
+
+% 三个不同的时间节点（开题、中期与结题）
+\newif\ifhit@opening
+\newif\ifhit@interim
+\newif\ifhit@final
+\define@key{hit}{stage}{%
+  \hit@openingfalse
+  \hit@interimfalse
+  \hit@finalfalse
+  \expandafter\csname hit@#1true\endcsname}
+
+% 三种不同的学位
 \newif\ifhit@bachelor
 \newif\ifhit@master
 \newif\ifhit@doctor
@@ -963,6 +975,8 @@
 % 此处设置校区，没有明确给出威海或者深圳时候，默认为哈尔滨校区。
 % \changes{v2.0.0}{2018/6/14}{此处添加geometry选项}
 %    \begin{macrocode}
+
+% 三个不同的校区
 \newif\ifhit@shenzhen
 \newif\ifhit@weihai
 \newif\ifhit@harbin
@@ -971,11 +985,16 @@
   \hit@weihaifalse
   \hit@harbinfalse
   \expandafter\csname hit@#1true\endcsname}
-\ifhit@weihai\relax\else
-\ifhit@shenzhen\relax\else
-\hit@harbintrue
+\ifhit@weihai
+    \relax
+\else
+  \ifhit@shenzhen
+    \relax
+  \else
+    \hit@harbintrue
+  \fi
 \fi
-\fi
+
 %    \end{macrocode}
 %    设置版芯，由于窝工版芯歧义。
 % \changes{v2.0.0}{2018/6/14}{此处添加geometry选项}
@@ -2256,7 +2275,18 @@ delim_1 "\\hspace*{\\fill}"
 \gdef\hit@cxuewei{学士}
 \fi
 \def\hit@bachelor@cxuewei{本科}
-\def\hit@bachelor@cthesisname{毕业设计（论文）中期报告}
+
+% 设置论文的不同时间段的页眉
+\ifhit@opening
+  \def\hit@bachelor@cthesisname{毕业设计（论文）开题报告}
+\else
+  \ifhit@interim
+    \def\hit@bachelor@cthesisname{毕业设计（论文）中期报告}
+  \else
+    \def\hit@bachelor@cthesisname{毕业设计（论文）}
+  \fi
+\fi
+
 \def\hit@bachelor@caffiltitle{院（系）}
 %</cfg>
 %    \end{macrocode}
@@ -2421,7 +2451,16 @@ delim_1 "\\hspace*{\\fill}"
 %    \begin{macrocode}
 
 \newcommand{\hit@second@titlepage@bachelor}{
-  \vspace*{1.2cm}
+  % 标题页标题上边距
+  \ifhit@opening
+    \vspace*{1.2cm}
+  \else
+    \ifhit@interim
+      \vspace*{1.2cm}
+    \else
+      \vspace*{0.8cm}
+    \fi
+  \fi
   \ifhit@harbin%
   \centering{\includegraphics[width=6.2cm]{hitlogo}}
   \else%
@@ -2435,7 +2474,20 @@ delim_1 "\\hspace*{\\fill}"
   \fi%
   \vspace{1.3cm}
   \begin{center}
-    \centering\includegraphics[width=13.5cm]{interim}
+    % “毕业设计（论文）[中期|开题]报告” 的字的尺寸
+    % 由于暂时没有找到好的方法可以调整为和教务处给的模版非常匹配（字体、大小等）的布局
+    % 这里采用直接暴力将标题从教务处模版中截图出来然后转为矢量图的方法（bitmap2eps.exe）
+    % 开题报告和中期报告的尺寸基本相似
+    \ifhit@opening
+      \centering\includegraphics[width=13.5cm]{opening}
+    \else
+      \ifhit@interim
+        \centering\includegraphics[width=13.5cm]{interim}
+      \else
+        \centering\includegraphics[width=10.5cm]{bthesistitle}
+      \fi
+    \fi
+    
     \vfill
     \parbox[t][14.2cm][b]{\textwidth}
     {\heiti\xiaosan
