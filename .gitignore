@@ -1,6 +1,11 @@
-# Images
-*.png
-*.png
+# Graphics
+figures/**/*.png
+figures/**/*.jpg
+figures/**/*.jpeg
+figures/**/*.gif
+figures/**/*.svg
+figures/**/*.pdf
+figures/**/*.eps
 
 # Compiling temperory files
 *.aux
@@ -23,6 +28,7 @@
 *.thm
 *.toc
 *.toe
+/*.eps
 
 # Misc
 *.doc
