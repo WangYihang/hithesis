@@ -54,7 +54,8 @@ xelatex main.tex
 ### 为什么我输入了 `xelatex .\main.tex` 却报错了？
 
 如果你使用 Windows 系统在编译时却遇到如下的报错：
-```
+
+```powershell
 PS C:\Users\***\Desktop\hithesis> xelatex.exe .\main.tex
 This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex)
  restricted \write18 enabled.
@@ -63,6 +64,7 @@ entering extended mode
 <*> .\main
           .tex
 ```
+
 这是因为 tex 无法识别参数中的 `.\`，命令修改为 `xelatex main.tex` 或者 `xelatex main` 即可。
 
 ### 如何在论文中插入代码块？
@@ -322,6 +324,7 @@ entering extended mode
     > [https://github.com/WangYihang/hithesis/blob/master/main.tex#L11-L13](https://github.com/WangYihang/hithesis/blob/master/main.tex#L11-L13)
 
 2. minted 自动换行
+
 当使用 Beamer （不确定其他文档类是否存在相同的问题）的时候并且某一行代码**过于长**（大约超过两倍 \textwidth）以至于需要进行两次以上换行才可以正常显示的时候，minted 会错误地**只进行一次换行**。
 
 ### LaTeX 有哪些高质量的学习资料？
