@@ -51,6 +51,20 @@ splitindex main -- -s hithesis.ist
 xelatex main.tex
 ```
 
+### 为什么我输入了 `xelatex .\main.tex` 却报错了？
+
+如果你使用 Windows 系统在编译时却遇到如下的报错：
+```
+PS C:\Users\***\Desktop\hithesis> xelatex.exe .\main.tex
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+! Undefined control sequence.
+<*> .\main
+          .tex
+```
+这是因为 tex 无法识别参数中的 `.\`，命令修改为 `xelatex main.tex` 或者 `xelatex main` 即可。
+
 ### 如何在论文中插入代码块？
 
 插入代码块一般有两个模块可以使用：lstlisting 与 minted。
