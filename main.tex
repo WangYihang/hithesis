@@ -154,8 +154,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 本科生毕业设计（论文）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TBD
+% \frontmatter
+% % 生成封面
+% \makecover
+% % 生成目录
+% \tableofcontents
 
+% \mainmatter
+% % 根据学校教务处中期报告模版将内容分为如下几个章节
+% \input{body/final/1-introduction.tex}
+% \input{body/final/2-static-taint-analysis.tex}
+% \input{body/final/3-dynamic-taint-analysis.tex}
+% \input{body/final/4-system-design-and-implementation.tex}
+% \input{body/final/5-experiments-design.tex}
+% \input{body/final/6-result-discussion.tex}
+
+% \backmatter
+% \input{body/final/conclusion.tex}   % 结论
+% \bibliographystyle{hithesis}
+% \bibliography{reference}
+% \authorization %授权
+% % \authorization[saomiao.pdf] %添加扫描页的命令，与上互斥
+% \input{body/final/acknowledgements.tex} %致谢
+% % \begin{appendix}%附录
+% %     \input{body/final/translation.tex}%本科生翻译论文
+% % \end{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 硕士研究生
